@@ -2,7 +2,7 @@
 
 ## Установка 
 
-- git clone https://-git-link-.git
+- git clone https://github.com/yargrinders/Universal_gulp.git
 - cd Universal_gulp 
 - npm i
 
