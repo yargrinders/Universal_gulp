@@ -74,7 +74,8 @@ gulp.task('sass:docs', function () {
 		.pipe(webpCss())
 		.pipe(groupMedia())
 		.pipe(sass())
-		.pipe(csso())
+		// .pipe(csso())
+		.pipe(csso({ restructure: true, sourceMap: false }))
 		.pipe(sourceMaps.write())
 		.pipe(gulp.dest('./docs/css/'));
 });
