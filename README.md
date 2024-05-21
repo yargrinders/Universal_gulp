@@ -16,6 +16,6 @@
 - gulp docs - деплой в docs
 
 ## Settings 
-
-- 
-- 
+ 
+- Для увеличения степени минификации CSS с помощью плагина gulp-csso расскоментировать строку в gulp/docs.js файле 
+- .pipe(csso({ restructure: true, sourceMap: false }))

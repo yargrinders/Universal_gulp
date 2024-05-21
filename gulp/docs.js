@@ -11,7 +11,10 @@ const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
 const webpCss = require('gulp-webp-css');
+const postcss = require('gulp-postcss');
+const pxtorem = require('postcss-pxtorem');
 
+// SERVER
 const server = require('gulp-server-livereload');
 const clean = require('gulp-clean');
 const fs = require('fs');
@@ -26,7 +29,6 @@ const changed = require('gulp-changed');
 // Images
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-
 
 gulp.task('clean:docs', function (done) {
 	if (fs.existsSync('./docs/')) {
@@ -64,6 +66,18 @@ gulp.task('html:docs', function () {
 });
 
 gulp.task('sass:docs', function () {
+	const processors = [
+		pxtorem({
+			rootValue: 16, // Значение корневого элемента, используемое для расчета rem
+			unitPrecision: 5,
+			propList: ['*'],
+			selectorBlackList: [],
+			replace: true,
+			mediaQuery: false,
+			minPixelValue: 0
+		})
+	];
+
 	return gulp
 		.src('./src/scss/*.scss')
 		.pipe(changed('./docs/css/'))
@@ -74,8 +88,8 @@ gulp.task('sass:docs', function () {
 		.pipe(webpCss())
 		.pipe(groupMedia())
 		.pipe(sass())
-		// .pipe(csso())
-		.pipe(csso({ restructure: true, sourceMap: false }))
+		.pipe(postcss(processors)) // Добавлено для преобразования px в rem
+		.pipe(csso())
 		.pipe(sourceMaps.write())
 		.pipe(gulp.dest('./docs/css/'));
 });

@@ -1,8 +1,20 @@
 const gulp = require('gulp');
+
+//HTML
 const fileInclude = require('gulp-file-include');
+
+//SASS
 const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
+const autoprefixer = require('gulp-autoprefixer');
+const groupMedia = require('gulp-group-css-media-queries');
+const postcss = require('gulp-postcss');
+const pxtorem = require('postcss-pxtorem');
+
+//SERVER
 const server = require('gulp-server-livereload');
+
+//UTILITIES
 const clean = require('gulp-clean');
 const fs = require('fs');
 const sourceMaps = require('gulp-sourcemaps');
@@ -10,8 +22,11 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
-const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
+
+// IMAGES 
+const imagemin = require('gulp-imagemin');
+
 
 gulp.task('clean:dev', function (done) {
 	if (fs.existsSync('./build/')) {
@@ -49,6 +64,18 @@ gulp.task('html:dev', function () {
 });
 
 gulp.task('sass:dev', function () {
+	const processors = [
+		pxtorem({
+			rootValue: 16, // Значение корневого элемента, используемое для расчета rem
+			unitPrecision: 5,
+			propList: ['*'],
+			selectorBlackList: [],
+			replace: true,
+			mediaQuery: false,
+			minPixelValue: 0
+		})
+	];
+
 	return (
 		gulp
 			.src('./src/scss/*.scss')
@@ -57,6 +84,9 @@ gulp.task('sass:dev', function () {
 			.pipe(sourceMaps.init())
 			.pipe(sassGlob())
 			.pipe(sass())
+			.pipe(autoprefixer())
+			.pipe(postcss(processors)) // Добавлено для преобразования px в rem
+			.pipe(groupMedia())
 			.pipe(sourceMaps.write())
 			.pipe(gulp.dest('./build/css/'))
 	);
@@ -66,7 +96,6 @@ gulp.task('images:dev', function () {
 	return gulp
 		.src('./src/img/**/*')
 		.pipe(changed('./build/img/'))
-		// .pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest('./build/img/'));
 });
 
@@ -89,7 +118,6 @@ gulp.task('js:dev', function () {
 		.src('./src/js/*.js')
 		.pipe(changed('./build/js/'))
 		.pipe(plumber(plumberNotify('JS')))
-		// .pipe(babel())
 		.pipe(webpack(require('./../webpack.config.js')))
 		.pipe(gulp.dest('./build/js/'));
 });

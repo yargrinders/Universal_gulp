@@ -1,4 +1,10 @@
 .test {
     background-color: aquamarine;
     height: 100%;
+
+    .pxtorem {
+        max-width: 1110px;
+        // width: 980px;
+        min-width: 320px;
+    }
 }
