@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('blocks/_head.html',{
+		"title":"Стартовый шаблон | ВебКадеми"
+		})
+</head>
+
+<body>
+	@@include('blocks/header.html')
+	<main class="docs">
+		<section>
+			<div class="container">
+				<h1 class="title-1">Gulp сборка для верстки сайтов</h1>
+				<p>Понятная Gulp сборка которая ускорит твою верстку в разы.</p>
+				<p>Документация по возможностям с примерами использования <a href="./docs.html">здесь</a>.</p>
+
+				<!-- Теги img теперь можно писать в несколько строк, ошибки не будет -->
+				<img
+					src="./../img/project-02.jpg" alt="">
+
+			</div>
+		</section>
+	</main>
+	@@include('blocks/footer.html')
+	<!-- JS Scripts -->
+	@@include('blocks/_script.html')
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Стартовый шаблон | ВебКадеми</title>
+		<link rel="stylesheet" href="./css/main.css" />
+
+		<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header__row">
+					<div class="logo">Logo</div>
+					<nav class="header__nav nav">
+						<ul class="nav__list">
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="docs.html">Документация</a></li>
+							<li><a href="grid.html">Сетка</a></li>
+							<li><a href="skeleton-grid.html">Сетка Skeleton</a></li>
+						</ul>
+					</nav>
+					<button class="mobile-nav-btn">
+						<div class="nav-icon"></div>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div class="mobile-nav">
+			<ul class="mobile-nav__list">
+				<li><a href="index.html">Главная</a></li>
+				<li><a href="docs.html">Документация</a></li>
+				<li><a href="grid.html">Сетка</a></li>
+				<li><a href="skeleton-grid.html">Сетка Skeleton</a></li>
+			</ul>
+		</div>
+
+		<main class="docs">
+			<section>
+				<div class="container">
+					<h1 class="title-1">Документация</h1>
+					<p>Документация и&#160;возможности сборки и&#160;стартового шаблона</p>
+
+					<p>
+						Запуск в&#160;режиме разработки: <code>gulp</code><br />
+						Сборка оптимизированной версии для продакшена: <code>gulp docs</code>
+					</p>
+
+					<h3 class="title-3">Возможности стартового шаблона</h3>
+					<ul>
+						<li>Готовые стили для CSS контейнеров на&#160;все случаи жизни.</li>
+						<li>Миксины и&#160;сниппеты для адаптива.</li>
+						<li>Миксин и&#160;сниппет для CSS retina фоновых изображений.</li>
+					</ul>
+
+					<h3 class="title-3">Возможности сборки</h3>
+
+					<ul>
+						<li>
+							Автоисправление путей. Смело используйте подсказки редактора при указании пути к&#160;файлу. Сборка сама удалит лишние поднятия на&#160;уровень вверх
+							<code>../../</code> в&#160;src HTML и background-image в&#160;SCSS.
+						</li>
+						<li>Автоматическая генерация SVG спрайтов. Подробнее см.&#160;ниже.</li>
+					</ul>
+
+					<h3 class="title-3">Особенности сборки для продакшена gulp docs</h3>
+					<ul>
+						<li>Автоматическое сжатие jpg изображений</li>
+						<li>Автоматическая генерация webp графики и&#160;указания webp формата в&#160;HTML.</li>
+						<li>
+							При прописывании тега img не&#160;обязательно прописывать srcset с&#160;2x. Плагин 'gulp-webp-retina-html' в&#160;таске 'html: dev' автоматически
+							добавляет тег picture и&#160;source для 2x изображений. Обязательно сохранять картинки в&#160;@2x разрешении.
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Автогенерация шрифтов и&#160;CSS подключения</h2>
+
+					<ol>
+						<li>Размещаем TTF и&#160;OTF шрифты в&#160;<code>src/fonts/</code></li>
+						<li>При запуске сборки OTF конвертируется в&#160;TTF внутри <code>src/fonts/</code>.</li>
+						<li>Затем TTF в&#160;WOFF и&#160;WOFF2 из&#160;<code>src/fonts/</code> в&#160;<code>build/fonts/</code>.</li>
+						<li>
+							Генерируются CSS стили подключения внутри <code>src/scss/base/_fontsAutoGen.scss</code>.<br />
+							Важно! Этот файл генерируется и&#160;перезаписывается автоматически.
+						</li>
+					</ol>
+
+					<p>
+						Пример:
+					</p>
+
+					<p class="font-1">Hello, world! Привет, мир!</p>
+					<p class="font-2">Hello, world! Привет, мир!</p>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Полезные сниппеты</h2>
+					<p>Сниппеты хранятся в&#160;папке <code>.vscode</code> в&#160;файле <code>webCademy.code-snippets</code></p>
+					<h4 class="title-4">SCSS сниппеты для медиазапросов</h4>
+
+					<p>Код вызова: <code>tablet</code></p>
+					<pre class="code">@include tablet { ... }</pre>
+
+					<p>Код вызова: <code>mobile</code></p>
+					<pre class="code">@include mobile { ... }</pre>
+
+					<p>Retina background-image через медиа запрос. Код вызова: <code>mediaBg</code></p>
+					<pre class="code">
+@include mediaBg() {
+	background-image: url('./../img/example@2x.jpg');
+}</pre
+					>
+
+					<p>Retina background-image через image-set. Код вызова: <code>imgSet</code></p>
+					<pre class="code">
+background-image: image-set(
+	url('./../img/bg.jpg') 1x,
+	url('./../img/bg@2x.jpg') 2x);</pre
+					>
+
+					<h4 class="title-4">HTML сниппет для svg иконок из&#160;спрайта</h4>
+					<p>Код вызова: <code>svgIcon</code></p>
+					<pre class="code">
+&lt;svg class="icon icon--heart-line"&gt;
+	&lt;use href="./img/svgsprite/sprite.symbol.svg#heart-line"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</pre
+					>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">SVG спрайты</h2>
+
+					<div class="icons-wrapper">
+						<svg class="icon icon--heart-line">
+							<use href="./img/svgsprite/sprite.symbol.svg#heart-line"></use>
+						</svg>
+
+						<svg class="icon icon--id-card-line">
+							<use href="./img/svgsprite/sprite.symbol.svg#id-card-line"></use>
+						</svg>
+						<svg class="icon icon--search-line">
+							<use href="./img/svgsprite/sprite.symbol.svg#search-line"></use>
+						</svg>
+						<svg class="icon icon--user-star">
+							<use href="./img/svgsprite/sprite.symbol.svg#user-star-line"></use>
+						</svg>
+					</div>
+
+					<p>Иконки размещаем в&#160;папку: <code>src/img/svgicons</code></p>
+					<p>Готовый файл со&#160;спрайтом собирается в: <code>build/img/svgsprite/sprite.symbol.svg</code></p>
+
+					<h4 class="title-4">HTML код</h4>
+					<pre class="code">
+&lt;svg class="icon icon heart-line"&gt;
+	&lt;use href="./img/svgsprite/sprite.symbol.svg#heart-line"&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre
+					>
+
+					<h4 class="title-4">CSS код</h4>
+					<pre class="code">
+.icon {
+	fill: transparent;
+	stroke: transparent;
+	width: 62px;
+	height: 62px;
+}
+
+.heart-line {
+	fill: rgb(241, 68, 131);
+}
+
+.id-card-line {
+	fill: rgb(51, 51, 51);
+}
+
+.search-line {
+	fill: rgb(28, 176, 80);
+}
+
+.icon--user-star {
+	fill: rgb(26, 134, 235);
+}</pre
+					>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Шпаргалка gulp-file-include</h2>
+					<p>
+						<a href="https://opalescent-side-463.notion.site/Gulp-file-include-ae5885e857cc4658987dd30f40b77e74?pvs=4" target="_blank">
+							Ссылка на&#160;шпаргалку.
+						</a>
+					</p>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Пример работы типографа</h2>
+
+					<h4 class="title-4">Русский язык</h4>
+					<p>
+						Раздобудь к&#160;утру ковёр&#160;&#8212; Шитый золотом узор!.. Государственное дело,&#160;&#8212; Расшибись, а&#160;будь добёр! Чтоб на&#160;ём&#160;была
+						видна, Как на&#160;карте, вся страна, Потому как мне с&#160;балкону Нет обзору ни&#160;хрена! Леонид Филатов &#171;Про Федота-стрельца&#187;.
+					</p>
+
+					<h4 class="title-4">Английский язык</h4>
+
+					<p>
+						Get a&#160;carpet by&#160;morning&#160;&#8212; A&#160;pattern embroidered in&#160;gold! So&#160;that the whole country can be&#160;seen on&#160;it, Like
+						on&#160;a&#160;map, Because from the balcony I&#160;have no&#160;view of&#160;anything! Leonid Filatov &#171;About Fedot the Sagittarius&#187;
+					</p>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Контейнеры</h2>
+				</div>
+
+				<div class="container">
+					<p>Стандартный контейнер <code>.container</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-full">
+					<p>Контейнер на&#160;всю ширину<code>.container-full</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-left-50">
+					<p>Контейнер слева на&#160;50%<code>.container-left-50</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-right-50">
+					<p>Контейнер справа на&#160;50%<code>.container-right-50</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-left">
+					<p>Контейнер слева до&#160;размера контейнера <code>.container-left</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-right">
+					<p>Контейнер вправо<code>.container-right</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-half-left">
+					<p>Контейнер на&#160;половину слева <code>.container-half-left</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-half-right">
+					<p>Контейнер на&#160;половину справа <code>.container-half-right</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container container_top">
+					<div class="container__left-block">
+						Содержимое левого блока <code>.container__left-block</code>
+						<div class="content-demo">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+								error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+							</p>
+						</div>
+					</div>
+					<div class="container__right-block">
+						Содержимое правого блока <code>.container__right-block</code>
+						<div class="content-demo">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+								error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__copyright">
+					<p>FOOTER</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="./js/index.bundle.js"></script>
+	</body>
+</html>

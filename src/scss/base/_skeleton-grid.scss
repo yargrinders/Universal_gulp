@@ -1,0 +1,130 @@
+/* Variables –––––––––––––––––––––––––––––––––––––––––––––––––– */
+$container-max-width: var(--container-width);
+$container-padding: 20px;
+$container-width-small: 85%;
+$container-width-medium: 80%;
+$gutter: 4%;
+$vertical-margin: 20px;
+$col-widths: (
+  1: 4.66666666667%,
+  2: 13.3333333333%,
+  3: 22%,
+  4: 30.6666666667%,
+  5: 39.3333333333%,
+  6: 48%,
+  7: 56.6666666667%,
+  8: 65.3333333333%,
+  9: 74%,
+  10: 82.6666666667%,
+  11: 91.3333333333%,
+  12: 100%
+);
+
+$offset-widths: (
+  1: 8.66666666667%,
+  2: 17.3333333333%,
+  3: 26%,
+  4: 34.6666666667%,
+  5: 43.3333333333%,
+  6: 52%,
+  7: 60.6666666667%,
+  8: 69.3333333333%,
+  9: 78%,
+  10: 86.6666666667%,
+  11: 95.3333333333%
+);
+
+/* Mixins –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin col($number) {
+  width: map-get($col-widths, $number);
+}
+
+@mixin offset($number) {
+  margin-left: map-get($offset-widths, $number);
+}
+
+/* Grid –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  box-sizing: border-box;
+
+  @media (min-width: 400px) {
+    width: $container-width-small;
+    padding: 0;
+  }
+
+  @media (min-width: 820px) {
+    width: $container-width-medium;
+  }
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: $vertical-margin; // Add vertical margin
+}
+
+@media (min-width: 820px) {
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      @include col($i);
+      margin-left: $gutter;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .col-1-3 { width: 30.6666666667%; }
+  .col-2-3 { width: 65.3333333333%; }
+  .col-1-2 { width: 48%; }
+
+  @for $i from 1 through 11 {
+    .offset-#{$i} {
+      @include offset($i);
+    }
+  }
+
+  .offset-1-3 { margin-left: 34.6666666667%; }
+  .offset-2-3 { margin-left: 69.3333333333%; }
+  .offset-1-2 { margin-left: 52%; }
+}
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// utility
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm {
+  display: none;
+}
