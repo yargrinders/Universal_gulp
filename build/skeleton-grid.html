@@ -12,32 +12,24 @@
 
 	<body>
 		<header class="header">
-			<div class="container">
-				<div class="header__row">
-					<div class="logo">Logo</div>
-					<nav class="header__nav nav">
-						<ul class="nav__list">
-							<li><a href="index.html">Главная</a></li>
-							<li><a href="docs.html">Документация</a></li>
-							<li><a href="grid.html">Сетка</a></li>
-							<li><a href="skeleton-grid.html">Сетка Skeleton</a></li>
+			<div class="header__container">
+				<div class="header__logo">
+					<span class="header-logo"></span>
+				</div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link">Главная</a></li>
+							<li class="menu__item"><a href="docs.html" class="menu__link">Документация</a></li>
+							<!-- <li class="menu__item"><a href="grid.html" class="menu__link">Сетка</a></li> -->
+							<li class="menu__item"><a href="skeleton-grid.html" class="menu__link">Сетка Skeleton</a></li>
 						</ul>
+						<button class="menu__button" type="button">Login</button>
 					</nav>
-					<button class="mobile-nav-btn">
-						<div class="nav-icon"></div>
-					</button>
 				</div>
 			</div>
 		</header>
-		<div class="mobile-nav">
-			<ul class="mobile-nav__list">
-				<li><a href="index.html">Главная</a></li>
-				<li><a href="docs.html">Документация</a></li>
-				<li><a href="grid.html">Сетка</a></li>
-				<li><a href="skeleton-grid.html">Сетка Skeleton</a></li>
-			</ul>
-		</div>
-
 		<main>
 			<section>
 				<div class="container">

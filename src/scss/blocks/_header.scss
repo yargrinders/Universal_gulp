@@ -1,16 +1,236 @@
-.header {
-	background-color: #c0e4f4;
-	padding: 50px 0;
+@use "sass:math";
 
-	&__row {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+/* Variables */
+$container-width: 1110px;
+$container-padding: 15px;
+$laptop-size: 1199px;
+$tablet-size: 768px;
+$mobile-size: 600px;
+
+/* Media Queries */
+@media (max-width: $tablet-size) {
+    .header__container {
+      min-height: 70px;
+    }
+}
+
+@media (max-width: $mobile-size) {
+	.header__container {
+		min-height: 30px;
 	}
 }
 
-.header__nav {
-	@include mobile {
-		display: none;
+/* Header */
+.header {
+	// background-color: var(--nav-bg);
+	background: var(--nav-bg);
+	background: linear-gradient(180deg, var(--nav-bg) 0%, var(--page-bg) 25%);
+	border-bottom: 1px solid var(--nav-bg);
+	&__container {
+		margin: 0 auto;
+		display: flex;
+		min-height: 100px;
+		max-width: var(--container-width);
+		padding: var(--container-padding);
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+	}
+
+	.header-logo {
+		position: relative;
+		z-index: 5;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		color: #597193;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		font-family: "Open Sans";
+		font-size: 26px;
+		font-weight: 600;
+		text-transform: uppercase;
+
+	&::before {
+		content: url('../img/logo/gulp_logo.svg');
+		margin-right: 9px;
+		position: relative;
+		top: 6px;
+	}
+}
+	&__menu {
+		display: flex;
+		flex: 1 1 auto;
+		justify-content: flex-end;
+		padding-left: 40px;
+	}
+}
+
+/* Menu */
+.menu__body {
+	display: flex;
+	align-items: center;
+	column-gap: 50px;
+}
+
+@media (max-width: $tablet-size) {
+	.menu__body {
+		column-gap: 50px;
+	}
+}
+
+@media (max-width: $tablet-size) {
+	.menu__body {
+		flex-direction: column;
+		align-items: center;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: -100%;
+		overflow: auto;
+		// background: var(--nav-bg);
+		background: linear-gradient(180deg, var(--nav-bg) 0%, var(--page-bg) 25%);
+		transition: left 0.3s ease;
+		padding: 100px var(--container-padding) var(--container-padding) var(--container-padding);
+		z-index: 1;
+
+    // &::before {
+	// 	content: '';
+	// 	position: fixed;
+	// 	background-color: #fff;
+	// 	height: 60px;
+	// 	width: 100%;
+	// 	top: 0;
+	// 	left: -100%;
+	// 	transition: left 0.3s ease;
+    // }
+
+    .menu-open & {
+			left: 0;
+			&::before {
+				left: 0;
+      		}
+    	}
+  	}
+}
+
+.menu__list {
+	display: flex;
+	column-gap: 17px;
+}
+
+@media (max-width: $tablet-size) {
+	.menu__list {
+		column-gap: 25px;
+	}
+}
+
+@media (max-width: $tablet-size) {
+	.menu__list {
+		flex-direction: column;
+		text-align: center;
+		row-gap: 25px;
+	}
+}
+
+.menu__link {
+	color: #353637;
+	display: block;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.44;
+	position: relative;
+	transition: color 0.3s ease;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 0%;
+		transition: width 0.3s ease;
+		height: 1px;
+		background-color: #597193;
+		left: 0;
+	}
+
+	&:hover {
+		color: #597193;
+
+		&::after {
+		width: 100%;
+		}
+	}
+}
+
+.menu__button {
+	font-family: "Open Sans";
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 400;
+	padding: 10px 21px 10px 22px;
+	color: #fff;
+	border-radius: 4px;
+	background-color: #597193;
+	box-shadow: 0px 4px 12px 0px rgba(21, 21, 21, 0.15);
+
+	&:hover {
+		background-color: #353637;
+		transition: all 0.3s;
+	}
+}
+
+.icon-menu {
+  	display: none;
+
+	@media (max-width: $tablet-size) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+		content: "";
+		transition: all 0.3s ease;
+		right: 0;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #000;
+    }
+
+    &::before {
+      	top: 0;
+    }
+
+    &::after {
+      	bottom: 0;
+    }
+
+    span {
+      	top: calc(50% - 1px);
+    }
+
+    .menu-open & {
+		span {
+			width: 0;
+		}
+
+		&::before {
+			top: calc(50% - 1px);
+			transform: rotate(-45deg);
+		}
+
+      	&::after {
+			bottom: calc(50% - 1px);
+			transform: rotate(45deg);
+    		}
+    	}
 	}
 }
