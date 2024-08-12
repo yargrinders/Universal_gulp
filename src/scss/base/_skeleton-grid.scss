@@ -128,3 +128,22 @@ $offset-widths: (
 .hidden-sm {
   display: none;
 }
+
+
+
+// Review
+
+.example__skeleton {
+  margin: 10px 0px;
+}
+.example_grid {
+  code {
+    display: block;
+    width: 100%;
+    background: #EEE;
+    text-align: center;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

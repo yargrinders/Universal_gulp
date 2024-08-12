@@ -47,9 +47,8 @@ $mobile-size: 600px;
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
-		color: #597193;
+		color: var(--accent);
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		font-family: "Open Sans";
 		font-size: 26px;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -138,9 +137,9 @@ $mobile-size: 600px;
 }
 
 .menu__link {
-	color: #353637;
+	color: var(--text-color);
 	display: block;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.44;
 	position: relative;
@@ -153,12 +152,12 @@ $mobile-size: 600px;
 		width: 0%;
 		transition: width 0.3s ease;
 		height: 1px;
-		background-color: #597193;
+		background-color: var(--nav-bg);
 		left: 0;
 	}
 
 	&:hover {
-		color: #597193;
+		color: var(--nav-bg);
 
 		&::after {
 		width: 100%;
@@ -167,18 +166,17 @@ $mobile-size: 600px;
 }
 
 .menu__button {
-	font-family: "Open Sans";
 	font-size: 16px;
 	line-height: 1.2;
 	font-weight: 400;
-	padding: 10px 21px 10px 22px;
+	padding: 10px 22px;
 	color: #fff;
 	border-radius: 4px;
-	background-color: #597193;
+	background-color: var(--nav-bg);
 	box-shadow: 0px 4px 12px 0px rgba(21, 21, 21, 0.15);
 
 	&:hover {
-		background-color: #353637;
+		background-color: var(--text-color);
 		transition: all 0.3s;
 	}
 }

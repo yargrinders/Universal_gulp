@@ -3,65 +3,71 @@
 
 <head>
 	@@include('blocks/_head.html',{
-		"title":"Стартовый шаблон | ВебКадеми"
+		"title":"Skeleton grid"
 		})
 </head>
 
 <body>
 	@@include('blocks/header.html')
-	<main>
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-6">
-						<img src="./../img/project-02.jpg" alt="">
-					  </div>
-					  <div class="col-6">
-						<img src="./../img/project-02.jpg" alt="">
-					  </div>
+	<main class="example__skeleton">
+		<div class="container">
+			<div class="row example_grid">
+				<div class="col-12">
+					<h2>12 Колоночная сетка</h2>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<img src="./../img/project-02.jpg" alt="">
-						<p>Lorem ipsum dolor sit.</p>
-					  </div>
-				</div>
+			<div class="row example_grid">
+				<div class="col-1"><code>.col-1</code></div>
+				<div class="col-11"><code>.col-11</code></div>
 			</div>
-			<div class="container">
-				<div class="row center">
-					<div class="col-3">
-						<img src="./../img/project-02.jpg" alt="">
-					</div>
-					<div class="col-3">
-						<img src="./../img/project-02.jpg" alt="">
-					</div>
-					<div class="col-3">
-						<img src="./../img/project-02.jpg" alt="">
-					</div>
-					<div class="col-3">
-						<img src="./../img/project-02.jpg" alt="">
-					</div>
-				</div>
+			<div class="row example_grid">
+				<div class="col-2"><code>.col-2</code></div>
+				<div class="col-10"><code>.col-10</code></div>
 			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-					<div class="col-1"><img src="./../img/project-02.jpg" alt=""></div>
-				</div>
+			<div class="row example_grid">
+				<div class="col-3"><code>.col-3</code></div>
+				<div class="col-9"><code>.col-9</code></div>
 			</div>
-		</section>
+			<div class="row example_grid">
+				<div class="col-4"><code>.col-4</code></div>
+				<div class="col-8"><code>.col-8</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-5"><code>.col-5</code></div>
+				<div class="col-7"><code>.col-7</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-6"><code>.col-6</code></div>
+				<div class="col-6"><code>.col-6</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-7"><code>.col-7</code></div>
+				<div class="col-5"><code>.col-5</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-8"><code>.col-8</code></div>
+				<div class="col-4"><code>.col-4</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-9"><code>.col-9</code></div>
+				<div class="col-3"><code>.col-3</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-10"><code>.col-10</code></div>
+				<div class="col-2"><code>.col-2</code></div>
+			</div>
+			<div class="row example_grid">
+				<div class="col-11"><code>.col-11</code></div>
+				<div class="col-1"><code>.col-1</code></div>
+			</div>
+		</div>
+		<!-- <div class="container">
+			<div class="row example_grid">
+				<div class="col-4"><code>.col-4</code></div>
+				<div class="col-4"><code>.col-4</code></div>
+				<div class="col-4"><code>.col-4</code></div>
+			</div>
+		</div> -->
 	</main>
 	@@include('blocks/footer.html')
 	<!-- JS Scripts -->
