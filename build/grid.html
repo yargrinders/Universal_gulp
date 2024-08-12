@@ -12,186 +12,154 @@
 
 	<body>
 		<header class="header">
-			<div class="container">
-				<div class="header__row">
-					<div class="logo">Logo</div>
-					<nav class="header__nav nav">
-						<ul class="nav__list">
-							<li><a href="index.html">Главная</a></li>
-							<li><a href="docs.html">Документация</a></li>
-							<li><a href="grid.html">Сетка</a></li>
-							<li><a href="skeleton-grid.html">Сетка Skeleton</a></li>
+			<div class="header__container">
+				<div class="header__logo">
+					<span class="header-logo"></span>
+				</div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link">Главная</a></li>
+							<li class="menu__item"><a href="docs.html" class="menu__link">Документация</a></li>
+							<!-- <li class="menu__item"><a href="grid.html" class="menu__link">Сетка</a></li> -->
+							<li class="menu__item"><a href="skeleton-grid.html" class="menu__link">Сетка Skeleton</a></li>
 						</ul>
+						<button class="menu__button" type="button">Login</button>
 					</nav>
-					<button class="mobile-nav-btn">
-						<div class="nav-icon"></div>
-					</button>
 				</div>
 			</div>
 		</header>
-		<div class="mobile-nav">
-			<ul class="mobile-nav__list">
-				<li><a href="index.html">Главная</a></li>
-				<li><a href="docs.html">Документация</a></li>
-				<li><a href="grid.html">Сетка</a></li>
-				<li><a href="skeleton-grid.html">Сетка Skeleton</a></li>
-			</ul>
-		</div>
-
-		<main>
-			<section>
-				<div class="container">
-					<div class="row">
-						<div class="col-6">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-6">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
+		<!-- <main>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
+					  </div>
+					  <div class="col-6">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
+					  </div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
+						<p>Lorem ipsum dolor sit.</p>
+					  </div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row center">
+					<div class="col-3">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
+					</div>
+					<div class="col-3">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
+					</div>
+					<div class="col-3">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
+					</div>
+					<div class="col-3">
+						<picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture>
 					</div>
 				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-							<p>Lorem ipsum dolor sit.</p>
-						</div>
-					</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
+					<div class="col-1"><picture>
+<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp">
+<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg">
+<img src="./img/project-02.jpg" alt="">
+</picture></div>
 				</div>
-				<div class="container">
-					<div class="row center">
-						<div class="col-3">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-3">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-3">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-3">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-						<div class="col-1">
-							<picture>
-								<source srcset="./img/project-02.webp 1x, ./img/project-02@2x.webp 2x" type="image/webp" />
-								<source srcset="./img/project-02.jpg 1x, ./img/project-02@2x.jpg 2x" type="image/jpeg" />
-								<img src="./img/project-02.jpg" alt="" />
-							</picture>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
+			</div>
+		</section>
+	</main> -->
 		<footer class="footer">
 			<div class="container">
 				<div class="footer__copyright">

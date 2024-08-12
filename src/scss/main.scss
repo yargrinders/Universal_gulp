@@ -7,7 +7,7 @@
 @import './base/docs'; /* Отключить при необходимости */
 @import './base/utils'; // Тест на ошибку
 // @import './base/simple-grid'; // 12 Simple Grid is a CSS grid https://simplegrid.io/
-// @import './base/skeleton-grid'; // 12 Skeleton Grid is a CSS grid 
+@import './base/skeleton-grid'; // 12 Skeleton Grid is a CSS grid 
 @import './base/containers';
 
 @import './base/sticky-footer';

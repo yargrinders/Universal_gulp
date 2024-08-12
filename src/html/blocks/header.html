@@ -1,20 +1,16 @@
 <header class="header">
-    <div class="container">
-        <div class="header__row">
-            <div class="logo">Logo</div>
-            <nav class="header__nav nav">
-                <ul class="nav__list">
+    <div class="header__container">
+        <div class="header__logo">
+            <span class="header-logo"></span>
+        </div>
+        <div class="header__menu menu">
+        <button type="button" class="menu__icon icon-menu"><span></span></button>
+            <nav class="menu__body">
+                <ul class="menu__list">
                     @@include('mobile-nav.html')
                 </ul>
+                <button class="menu__button" type="button">Login</button>
             </nav>
-            <button class="mobile-nav-btn">
-                <div class="nav-icon"></div>
-            </button>
         </div>
     </div>
 </header>
-<div class="mobile-nav">
-	<ul class="mobile-nav__list">
-		@@include('mobile-nav.html')
-	</ul>
-</div>
